@@ -9,4 +9,7 @@ stages:
 build-job:
   stage: build
   script:
-    - yarn build
+    - rm -rf build
+    - npm install
+    - react-app-rewired build
+    - echo "build success"
