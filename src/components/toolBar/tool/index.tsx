@@ -4,15 +4,19 @@ import FormatColorFillTwoTone from "@material-ui/icons/FormatColorFillTwoTone";
 import TextFieldsIcon from "@material-ui/icons/TextFields";
 import ColorizeTwoToneIcon from "@material-ui/icons/ColorizeTwoTone";
 import SearchTwoToneIcon from "@material-ui/icons/SearchTwoTone";
-import {ToolType} from "./interface";
+import {ToolType} from "../toolType";
 import {ToolTypeContext} from "../../../context";
 import "./index.less";
 
 const selectedToolClass = "selected-tool";
+export interface ToolPanelProps {
+    className?: string;
+}
 
-const ToolPanel = () => {
+const ToolPanel: React.FC<ToolPanelProps> = (props) => {
+    const {className} = props;
     return (
-        <div className="toolpanel">
+        <div className={className ? `toolpanel ${className}` : "toolpanel"}>
             <ToolTypeContext.Consumer>
                 {
                     ({type, setType}) => (

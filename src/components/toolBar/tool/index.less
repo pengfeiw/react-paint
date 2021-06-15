@@ -1,6 +1,8 @@
 .toolpanel {
     width: 80px;
+    display: inline-block;
     flex-direction: column;
+    position: relative;
     .tool-item {
         cursor: pointer;
     }
@@ -13,6 +15,9 @@
         margin-bottom: 5px;
     }
     .title {
+        width: 100%;
         text-align: center;
+        position: absolute;
+        bottom: 0px;
     }
 }

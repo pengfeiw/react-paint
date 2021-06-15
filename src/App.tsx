@@ -1,23 +1,23 @@
 import React from "react";
 import Toolbar from "./components/toolBar";
 import Canvas from "./components/canvas";
-import {ToolTypeContext} from "./context";
+import {ToolTypeContext, ShapeTypeContext} from "./context";
 import "./app.less";
 import {useState} from "react";
-import {ToolType} from "./components/toolBar/tool/interface";
+import {ShapeToolType, ToolType} from "./components/toolBar/toolType";
 
 function App(): JSX.Element {
     const [toolType, setToolType] = useState<ToolType>(ToolType.PEN);
+    const [shapeType, setShapeType] = useState<ShapeToolType>(ShapeToolType.LINE);
 
     return (
-        <ToolTypeContext.Provider value={{
-            type: toolType,
-            setType: setToolType
-        }}>
-            <div className="app">
-                <Toolbar />
-                <Canvas toolType={toolType} />
-            </div>
+        <ToolTypeContext.Provider value={{type: toolType, setType: setToolType}}>
+            <ShapeTypeContext.Provider value={{type: shapeType, setType: setShapeType}}>
+                <div className="app">
+                    <Toolbar />
+                    <Canvas toolType={toolType} />
+                </div>
+            </ShapeTypeContext.Provider>
         </ToolTypeContext.Provider>
     );
 }

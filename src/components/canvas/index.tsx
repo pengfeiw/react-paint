@@ -3,7 +3,7 @@ import {Paper} from "@material-ui/core";
 import "./index.less";
 import {useEffect} from "react";
 import {useRef} from "react";
-import {ToolType} from "../toolBar/tool/interface";
+import {ToolType} from "../toolBar/toolType";
 import {FC} from "react";
 
 interface CanvasProps {
