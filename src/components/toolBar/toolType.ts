@@ -1,3 +1,6 @@
+/**
+ * 工具类型
+ */
 export enum ToolType {
     PEN, // 笔
     COLOR_FILL, // 填充
@@ -8,6 +11,9 @@ export enum ToolType {
     SHAPE // 形状
 }
 
+/**
+ * 形状类型
+ */
 export enum ShapeToolType {
     /**直线 */
     LINE,
@@ -35,4 +41,14 @@ export enum ShapeToolType {
     FOUR_STAR,
     /**五角星 */
     FIVE_STAR
+}
+
+/**
+ * 形状伦廓类型
+ */
+export enum ShapeOutlineType {
+    /**实线 */
+    SOLID,
+    /**虚线 */
+    DOTTED
 }

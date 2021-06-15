@@ -4,12 +4,13 @@ import ToolPanel from "./tool";
 import ShapePanel from "./shape";
 import Divider from "@material-ui/core/Divider";
 
-const Toolbar = () => {
+const Toolbar = (): JSX.Element => {
     return (
         <div className="toolbar">
             <ToolPanel className="toolbar-item" />
             <Divider className="divider" orientation="vertical" flexItem />
             <ShapePanel className="toolbar-item" />
+            <Divider className="divider" orientation="vertical" flexItem />
         </div>
     );
 };

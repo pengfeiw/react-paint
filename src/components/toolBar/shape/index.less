@@ -1,20 +1,44 @@
 .shapepanel {
     position: relative;
-    .shape-content {
-        display  : flex;
-        flex-wrap: wrap;
-        width    : 140px;
+    width   : 220px;
 
-        .shape-item {
-            margin: 2px;
-            height: 24px;
-            width : 24px;
+    .shape-container {
+        text-align: center;
+        .shape-content {
+            display  : inline-flex;
+            flex-wrap: wrap;
+            width    : 140px;
+
+            .shape-item {
+                margin: 2px;
+                height: 24px;
+                width : 24px;
+                cursor: pointer;
+            }
+
+            .selected-shape {
+                background-color: #c9e0f7;
+            }
+        }
+
+        .shape-style {
+            display    : inline-block;
+            margin-left: 5px;
+
+            .MuiFormLabel-root {
+                font-size: 15px;
+            }
+
+            .MuiSelect-root {
+                padding  : 6px 30px 5px 5px;
+                font-size: 12px;
+            }
         }
     }
     .title {
-        width: 100%;
+        width     : 100%;
         text-align: center;
-        position: absolute;
-        bottom: 0px;
+        position  : absolute;
+        bottom    : 0px;
     }
 }
