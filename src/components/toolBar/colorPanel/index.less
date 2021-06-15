@@ -1,0 +1,45 @@
+.colorpanel {
+    position: relative;
+    .content {
+        display: flex;
+
+        .main-color,
+        .sub-color {
+            display        : flex;
+            flex-direction : column;
+            height         : 70px;
+            width          : 33px;
+            margin         : 0px 5px;
+            justify-content: center;
+            text-align     : center;
+        }
+
+        .color-box1 {
+            height: 32px;
+            width : 32px;
+        }
+
+        .color-box2 {
+            height: 28px;
+            width : 28px;
+            margin: 2px;
+        }
+
+        .color-box1,
+        .color-box2 {
+            border : 1px solid #808080;
+            padding: 1px;
+        }
+
+        .color-result {
+            display: flex;
+        }
+    }
+
+    .title {
+        width     : 100%;
+        text-align: center;
+        position  : absolute;
+        bottom    : 0px;
+    }
+}
