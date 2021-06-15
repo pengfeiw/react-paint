@@ -1,11 +1,9 @@
 import React from "react";
-import { Button, DatePicker } from "antd";
 
 function App(): JSX.Element {
     return (
         <div>
-            <Button type="primary">Hello World</Button>
-            <DatePicker />
+            111
         </div>
     );
 }
