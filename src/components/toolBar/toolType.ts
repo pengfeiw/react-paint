@@ -52,3 +52,13 @@ export enum ShapeOutlineType {
     /**虚线 */
     DOTTED
 }
+
+/**
+ * 线宽
+ */
+export enum LineWidthType {
+    THIN,
+    MIDDLE,
+    BOLD,
+    MAXBOLD
+}

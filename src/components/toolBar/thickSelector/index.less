@@ -1,0 +1,34 @@
+.thickselector {
+    margin  : 0 5px;
+    position: relative;
+
+    .thickline {
+        cursor: pointer;
+    }
+
+    .title {
+        width     : 100%;
+        text-align: center;
+        position  : absolute;
+        bottom    : 0px;
+    }
+}
+
+.MuiPopover-paper {
+    display: flex;
+    flex-direction: column;
+    .thick-item {
+        width: 64px;
+        margin: 5px 0px;
+        height: 15px;
+        cursor: pointer;
+    }
+
+    .thick-item+.thick-item {
+        padding: 0px 5px;
+    }
+
+    .selected-item {
+        background-color: #c9e0f7;
+    }
+}

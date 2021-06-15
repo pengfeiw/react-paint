@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-empty-function */
 import {createContext} from "react";
-import {ShapeOutlineType, ShapeToolType, ToolType} from "../components/toolBar/toolType";
+import {LineWidthType, ShapeOutlineType, ShapeToolType, ToolType} from "../components/toolBar/toolType";
 
 export const ToolTypeContext = createContext({
     type: ToolType.PEN,
@@ -16,4 +16,9 @@ export const ShapeTypeContext = createContext({
 export const ShapeOutlineContext = createContext({
     type: ShapeOutlineType.SOLID,
     setType: (type: ShapeOutlineType) => {}
+});
+
+export const LineWidthContext = createContext({
+    type: LineWidthType.THIN,
+    setType: (type: LineWidthType) => {}
 });
