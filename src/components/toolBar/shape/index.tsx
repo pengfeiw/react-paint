@@ -5,7 +5,7 @@ import Select from "@material-ui/core/Select";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import {ShapeOutlineContext, ShapeTypeContext, ToolTypeContext} from "../../../context";
-import {ShapeOutlineType, ShapeToolType, ToolType} from "../toolType";
+import {ShapeOutlineType, ShapeToolType, ToolType} from "../../../util/toolType";
 import "./index.less";
 
 const selectedShapeClass = "selected-shape";

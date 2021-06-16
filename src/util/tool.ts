@@ -30,7 +30,7 @@ export class Pen extends Tool {
 }
 
 export class ColorFill extends Tool {
-
+    
 }
 
 export class Text extends Tool {

@@ -4,7 +4,7 @@ import FormatColorFillTwoTone from "@material-ui/icons/FormatColorFillTwoTone";
 import TextFieldsIcon from "@material-ui/icons/TextFields";
 import ColorizeTwoToneIcon from "@material-ui/icons/ColorizeTwoTone";
 import SearchTwoToneIcon from "@material-ui/icons/SearchTwoTone";
-import {ToolType} from "../toolType";
+import {ToolType} from "../../../util/toolType";
 import {ToolTypeContext} from "../../../context";
 import "./index.less";
 

@@ -2,7 +2,7 @@ import React from "react";
 import Popover from "@material-ui/core/Popover";
 import "./index.less";
 import {useState} from "react";
-import {LineWidthType} from "../toolType";
+import {LineWidthType} from "../../../util/toolType";
 import {useContext} from "react";
 import {LineWidthContext} from "../../../context";
 

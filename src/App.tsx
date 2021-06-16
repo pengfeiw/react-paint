@@ -4,7 +4,7 @@ import Canvas from "./components/canvas";
 import {ToolTypeContext, ShapeTypeContext, ShapeOutlineContext, LineWidthContext, ColorContext} from "./context";
 import "./app.less";
 import {useState} from "react";
-import {ColorType, LineWidthType, ShapeOutlineType, ShapeToolType, ToolType} from "./components/toolBar/toolType";
+import {ColorType, LineWidthType, ShapeOutlineType, ShapeToolType, ToolType} from "./util/toolType";
 
 function App(): JSX.Element {
     const [toolType, setToolType] = useState<ToolType>(ToolType.PEN);
