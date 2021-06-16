@@ -16,6 +16,7 @@ const Toolbar = (): JSX.Element => {
             <ThickSelector className="toolbar-item" />
             <Divider className="divider" orientation="vertical" flexItem />
             <ColorPanel className="toolbar-item" />
+            <Divider className="divider" orientation="vertical" flexItem />
         </div>
     );
 };

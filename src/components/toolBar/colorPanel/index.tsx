@@ -107,7 +107,7 @@ const ColorPanel: React.FC<ColorPanelProps> = (props) => {
     const activeColorType = colorContext.activeColor;
 
     useEffect(() => {
-        colorContext.setColor(pickerColor.hex);
+        colorContext.setColor(`#${pickerColor.hex}`);
     }, [pickerColor]);
 
     return (
@@ -132,6 +132,7 @@ const ColorPanel: React.FC<ColorPanelProps> = (props) => {
                 </div>
                 <div className="color-picker">
                     <ColorPicker value={pickerColor} hideTextfield onChange={(color) => setPickerColor(color)} />
+                    <div className="color-picker-title">编辑颜色</div>
                 </div>
             </div>
             <div className="title">颜色</div>
