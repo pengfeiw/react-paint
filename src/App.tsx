@@ -15,6 +15,14 @@ function App(): JSX.Element {
     const [mainColor, setMainColor] = useState<string>("black");
     const [subColor, setSubColor] = useState<string>("white");
 
+    const setColor = (value: string) => {
+        if (activeColorType === ColorType.MAIN) {
+            setMainColor(value);
+        } else {
+            setSubColor(value);
+        }
+    };
+
     return (
         <ToolTypeContext.Provider value={{type: toolType, setType: setToolType}}>
             <ShapeTypeContext.Provider value={{type: shapeType, setType: (type: ShapeToolType) => {setToolType(ToolType.SHAPE); setShapeType(type);}}}>
@@ -24,18 +32,18 @@ function App(): JSX.Element {
                             mainColor,
                             subColor,
                             activeColor: activeColorType,
-                            setColor: (value: string) => {
-                                if (activeColorType === ColorType.MAIN) {
-                                    setMainColor(value);
-                                } else {
-                                    setSubColor(value);
-                                }
-                            },
+                            setColor,
                             setActiveColor: setActiveColorType
                         }}>
                             <div className="app">
                                 <Toolbar />
-                                <Canvas toolType={toolType} />
+                                <Canvas
+                                    toolType={toolType}
+                                    mainColor={mainColor}
+                                    subColor={subColor}
+                                    lineWidthType={lineWidthType}
+                                    setColor={setColor}
+                                />
                             </div>
                         </ColorContext.Provider>
                     </LineWidthContext.Provider>

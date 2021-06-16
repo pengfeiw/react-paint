@@ -69,7 +69,10 @@ const ThickSelector: React.FC<ThickSelectorProps> = (props) => {
                             src={thick.img}
                             key={thick.img}
                             title={thick.title}
-                            onClick={() => lineWidthContext.setType(thick.type)}
+                            onClick={() => {
+                                lineWidthContext.setType(thick.type);
+                                setOpen(false);
+                            }}
                         />
                     ))
                 }
