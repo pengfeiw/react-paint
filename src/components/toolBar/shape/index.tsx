@@ -107,11 +107,11 @@ const ShapePanel: React.FC<ShapePanelProps> = (props) => {
                 </div>
                 <div className="shape-style">
                     <FormControl variant="outlined" disabled={toolTypeContex.type === ToolType.SHAPE ? false : true}>
-                        <InputLabel>伦廓</InputLabel>
+                        <InputLabel>轮廓</InputLabel>
                         <Select
                             value={shapeOutlineContext.type}
                             onChange={(event) => shapeOutlineContext.setType(event.target.value as ShapeOutlineType)}
-                            label="伦廓"
+                            label="轮廓"
                         >
                             <MenuItem value={ShapeOutlineType.SOLID}>实线</MenuItem>
                             <MenuItem value={ShapeOutlineType.DOTTED}>虚线</MenuItem>

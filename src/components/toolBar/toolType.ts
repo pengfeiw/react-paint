@@ -44,7 +44,7 @@ export enum ShapeToolType {
 }
 
 /**
- * 形状伦廓类型
+ * 形状轮廓类型
  */
 export enum ShapeOutlineType {
     /**实线 */
