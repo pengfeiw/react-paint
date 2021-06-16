@@ -5,9 +5,14 @@
     position: relative;
     .tool-item {
         cursor: pointer;
+        border: 1px solid transparent;
+
+        &:hover {
+            border: 1px solid #64a5e7;
+        }
     }
     .selected-tool {
-        background-color: #c9e0f7;
+        background-color: #bcdbfa;
     }
     .top,.down {
         display: flex;

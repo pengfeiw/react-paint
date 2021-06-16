@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-empty-function */
 import {createContext} from "react";
-import {LineWidthType, ShapeOutlineType, ShapeToolType, ToolType} from "../components/toolBar/toolType";
+import {ColorType, LineWidthType, ShapeOutlineType, ShapeToolType, ToolType} from "../components/toolBar/toolType";
 
 export const ToolTypeContext = createContext({
     type: ToolType.PEN,
@@ -21,4 +21,12 @@ export const ShapeOutlineContext = createContext({
 export const LineWidthContext = createContext({
     type: LineWidthType.THIN,
     setType: (type: LineWidthType) => {}
+});
+
+export const ColorContext = createContext({
+    mainColor: "black",
+    subColor: "white",
+    activeColor: ColorType.MAIN,
+    setColor: (value: string) => {},
+    setActiveColor: (type: ColorType) => {}
 });

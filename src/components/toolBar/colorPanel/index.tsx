@@ -1,5 +1,11 @@
 import React from "react";
+import {useContext} from "react";
+import {ColorContext} from "../../../context";
+import {ColorType} from "../toolType";
+import {ColorPicker, createColor} from "material-ui-color";
 import "./index.less";
+import {useState} from "react";
+import {useEffect} from "react";
 
 interface ColorPanelProps {
     className?: string;
@@ -75,7 +81,11 @@ const colors = [
         value: "#b5e61d"
     },
     {
-        title: "淡青绿色",
+        title: "青绿色",
+        value: "#808000"
+    },
+    {
+        title: "淡青蓝色",
         value: "#99d9ea"
     },
     {
@@ -88,25 +98,40 @@ const colors = [
     }
 ];
 
+const activeColorTypeCls = "active-color-type";
+
 const ColorPanel: React.FC<ColorPanelProps> = (props) => {
     const {className} = props;
+    const [pickerColor, setPickerColor] = useState(createColor("black"));
+    const colorContext = useContext(ColorContext);
+    const activeColorType = colorContext.activeColor;
+
+    useEffect(() => {
+        colorContext.setColor(pickerColor.hex);
+    }, [pickerColor]);
 
     return (
         <div className={className ? `colorpanel ${className}` : "colorpanel"}>
             <div className="content">
                 <div className="color-result">
-                    <div className="main-color">
-                        <div className="color-box1" />
+                    <div onClick={() => colorContext.setActiveColor(ColorType.MAIN)} className={activeColorType === ColorType.MAIN ? `main-color ${activeColorTypeCls}` : "main-color"}>
+                        <div className="color-box1" style={{backgroundColor: colorContext.mainColor}} />
                         <div>颜色1</div>
                     </div>
-                    <div className="sub-color">
-                        <div className="color-box2" />
+                    <div onClick={() => colorContext.setActiveColor(ColorType.SUB)} className={activeColorType === ColorType.SUB ? `sub-color ${activeColorTypeCls}` : "sub-color"}>
+                        <div className="color-box2" style={{backgroundColor: colorContext.subColor}} />
                         <div>颜色2</div>
                     </div>
                 </div>
                 <div className="color-template">
+                    {
+                        colors.map((color) => (
+                            <div onClick={() => colorContext.setColor(color.value)} key={color.value} className="color-template-item" style={{backgroundColor: color.value}} />
+                        ))
+                    }
                 </div>
                 <div className="color-picker">
+                    <ColorPicker value={pickerColor} hideTextfield onChange={(color) => setPickerColor(color)} />
                 </div>
             </div>
             <div className="title">颜色</div>

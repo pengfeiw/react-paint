@@ -62,3 +62,11 @@ export enum LineWidthType {
     BOLD,
     MAXBOLD
 }
+
+/**
+ * 当前选择的颜色：主、副
+ */
+export enum ColorType {
+    MAIN,
+    SUB
+}
