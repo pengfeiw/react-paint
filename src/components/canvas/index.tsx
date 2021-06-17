@@ -6,7 +6,7 @@ import {useRef} from "react";
 import {LineWidthType, ToolType} from "../../util/toolType";
 import {FC} from "react";
 import {useState} from "react";
-import {Pen, Tool, Eraser, ColorExtract} from "../../util/tool";
+import {Pen, Tool, Eraser, ColorExtract, ColorFill} from "../../util/tool";
 
 interface CanvasProps {
     toolType: ToolType;
@@ -31,6 +31,9 @@ const Canvas: FC<CanvasProps> = (props) => {
                 break;
             case ToolType.COLOR_EXTRACT:
                 setTool(new ColorExtract(setColor));
+                break;
+            case ToolType.COLOR_FILL:
+                setTool(new ColorFill());
                 break;
             default:
                 break;
