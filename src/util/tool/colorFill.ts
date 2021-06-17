@@ -214,8 +214,10 @@ const efficentFloodFill = (ctx: CanvasRenderingContext2D, startX: number, startY
     const canvasWidth = ctx.canvas.width, canvasHeight = ctx.canvas.height;
     const startPos = (startY * canvasWidth + startX) * 4;
     const colorLayer = ctx.getImageData(0, 0, canvasWidth, canvasHeight);
-    const startColor: [number, number, number, number] = [colorLayer.data[startPos], colorLayer.data[startPos + 1], colorLayer.data[startPos + 2], colorLayer.data[startPos + 3]];
+    const startColor: [number, number, number] = [colorLayer.data[startPos], colorLayer.data[startPos + 1], colorLayer.data[startPos + 2]];
     
+    if (startColor[0] === fillColor[0] && startColor[1] === fillColor[1] && startColor[2] === fillColor[2]) return;
+
     while (pixelStack.length > 0) {
         const newPos = pixelStack.pop() as [number, number];
         
@@ -264,7 +266,7 @@ const efficentFloodFill = (ctx: CanvasRenderingContext2D, startX: number, startY
 /**
  * 判断两个位置的像素颜色是否相同
  */
-const matchColor = (colorLayer: ImageData, pixelPos: number, color: [number, number, number, number]) => {
+const matchColor = (colorLayer: ImageData, pixelPos: number, color: [number, number, number]) => {
     const r = colorLayer.data[pixelPos];
     const g = colorLayer.data[pixelPos + 1];
     const b = colorLayer.data[pixelPos + 2];
