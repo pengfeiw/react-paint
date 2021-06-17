@@ -1,6 +1,12 @@
 {
-    "name": "person-site",
+    "name": "react-paint",
     "version": "0.1.0",
+    "keywords": ["paint", "react"],
+    "description": "a simple paint tool",
+    "author": {
+        "name": "Wang Pengfei",
+        "url": "http://www.pengfeixc.com"
+    },
     "private": true,
     "dependencies": {
         "@material-ui/core": "^4.11.4",
