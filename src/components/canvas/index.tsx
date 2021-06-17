@@ -3,13 +3,15 @@ import {Paper} from "@material-ui/core";
 import "./index.less";
 import {useEffect} from "react";
 import {useRef} from "react";
-import {LineWidthType, ToolType} from "../../util/toolType";
+import {LineWidthType, ShapeToolType, ToolType} from "../../util/toolType";
 import {FC} from "react";
 import {useState} from "react";
 import {Pen, Tool, Eraser, ColorExtract, ColorFill} from "../../util/tool";
+import Shape from "../../util/tool/shape";
 
 interface CanvasProps {
     toolType: ToolType;
+    shapeType: ShapeToolType;
     lineWidthType: LineWidthType;
     mainColor: string;
     subColor: string;
@@ -17,7 +19,7 @@ interface CanvasProps {
 }
 
 const Canvas: FC<CanvasProps> = (props) => {
-    const {toolType, lineWidthType, mainColor, subColor, setColor} = props;
+    const {toolType, lineWidthType, mainColor, subColor, setColor, shapeType} = props;
     const [tool, setTool] = useState<Tool>();
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -35,10 +37,13 @@ const Canvas: FC<CanvasProps> = (props) => {
             case ToolType.COLOR_FILL:
                 setTool(new ColorFill());
                 break;
+            case ToolType.SHAPE:
+                setTool(new Shape(shapeType));
+                break;
             default:
                 break;
         }
-    }, [toolType]);
+    }, [toolType, shapeType]);
 
     useEffect(() => {
         switch (lineWidthType) {

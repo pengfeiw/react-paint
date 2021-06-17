@@ -39,6 +39,7 @@ function App(): JSX.Element {
                                 <Toolbar />
                                 <Canvas
                                     toolType={toolType}
+                                    shapeType={shapeType}
                                     mainColor={mainColor}
                                     subColor={subColor}
                                     lineWidthType={lineWidthType}

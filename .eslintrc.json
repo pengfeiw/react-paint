@@ -17,7 +17,8 @@
         "@typescript-eslint/explicit-function-return-type": 0,
         "@typescript-eslint/no-var-requires": 0,
         "react/no-unescaped-entities": 0,
-        "react/prop-types": 0
+        "react/prop-types": 0,
+        "@typescript-eslint/explicit-module-boundary-types": "off"
     },
     "settings": {
         "react": {
