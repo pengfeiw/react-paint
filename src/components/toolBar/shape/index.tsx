@@ -70,11 +70,6 @@ const shapes = [
         type: ShapeToolType.FOUR_STAR,
         img: "./icon/shape_fourstar.svg",
         title: "四角星"
-    },
-    {
-        type: ShapeToolType.FIVE_STAR,
-        img: "./icon/shape_fivestar.svg",
-        title: "五角星"
     }
 ];
 

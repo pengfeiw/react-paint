@@ -38,9 +38,7 @@ export enum ShapeToolType {
     /**左箭头 */
     ARROW_LEFT,
     /**四角星 */
-    FOUR_STAR,
-    /**五角星 */
-    FIVE_STAR
+    FOUR_STAR
 }
 
 /**

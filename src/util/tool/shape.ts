@@ -1,5 +1,4 @@
-import {createTextChangeRange} from "typescript";
-import {ShapeToolType, ShapeOutlineType} from "../toolType";
+import {ShapeToolType} from "../toolType";
 import Tool, {Point, getMousePos} from "./tool";
 
 /**
@@ -108,23 +107,20 @@ const getVertexs = (type: ShapeToolType, sx: number, sy: number, ex: number, ey:
 
 class Shape extends Tool {
     private type: ShapeToolType;
-    private borderType: ShapeOutlineType = ShapeOutlineType.SOLID;
     private saveImageData?: ImageData;
     private isMouseDown = false;
     private mouseDownPos = {x: 0, y: 0};
     private lineWidthBase = 1;
-
-    public constructor(type: ShapeToolType) {
+    public isDashed = false;
+    private dashLineStyle = [10, 10];
+    public constructor(type: ShapeToolType, dashed = false) {
         super();
         this.type = type;
+        this.isDashed = dashed;
     }
 
     public setType(type: ShapeToolType) {
         this.type = type;
-    }
-
-    public setBorderType(type: ShapeOutlineType) {
-        this.borderType = type;
     }
 
     public onMouseDown(event: MouseEvent): void {
@@ -148,12 +144,14 @@ class Shape extends Tool {
             ctx.strokeStyle = Tool.mainColor;
             ctx.lineWidth = Tool.lineWidthFactor * this.lineWidthBase;
             ctx.fillStyle = Tool.subColor;
+            if (this.isDashed) {
+                ctx.setLineDash(this.dashLineStyle);
+            }
 
             if (this.type === ShapeToolType.CIRCLE) {
                 ctx.beginPath();
                 ctx.ellipse(vertexs[0].x, vertexs[0].y, Math.abs(0.5 * (mousePos.x - this.mouseDownPos.x)), Math.abs(0.5 * (mousePos.y - this.mouseDownPos.y)), 0, 0, Math.PI * 2);
                 ctx.stroke();
-                // ctx.fill();
             } else {
                 ctx.beginPath();
                 ctx.moveTo(vertexs[0].x, vertexs[0].y);
@@ -161,9 +159,10 @@ class Shape extends Tool {
                     ctx.lineTo(vertexs[i].x, vertexs[i].y);
                 }
                 ctx.closePath();
-                ctx.fill();
-                // ctx.stroke();
+                ctx.stroke();
             }
+
+            ctx.setLineDash([]);
         }
     }
 

@@ -40,6 +40,7 @@ function App(): JSX.Element {
                                 <Canvas
                                     toolType={toolType}
                                     shapeType={shapeType}
+                                    shapeOutlineType={shapeOutlineType}
                                     mainColor={mainColor}
                                     subColor={subColor}
                                     lineWidthType={lineWidthType}

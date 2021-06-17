@@ -3,7 +3,7 @@ import {Paper} from "@material-ui/core";
 import "./index.less";
 import {useEffect} from "react";
 import {useRef} from "react";
-import {LineWidthType, ShapeToolType, ToolType} from "../../util/toolType";
+import {LineWidthType, ShapeOutlineType, ShapeToolType, ToolType} from "../../util/toolType";
 import {FC} from "react";
 import {useState} from "react";
 import {Pen, Tool, Eraser, ColorExtract, ColorFill} from "../../util/tool";
@@ -12,6 +12,7 @@ import Shape from "../../util/tool/shape";
 interface CanvasProps {
     toolType: ToolType;
     shapeType: ShapeToolType;
+    shapeOutlineType: ShapeOutlineType;
     lineWidthType: LineWidthType;
     mainColor: string;
     subColor: string;
@@ -19,7 +20,7 @@ interface CanvasProps {
 }
 
 const Canvas: FC<CanvasProps> = (props) => {
-    const {toolType, lineWidthType, mainColor, subColor, setColor, shapeType} = props;
+    const {toolType, lineWidthType, mainColor, subColor, setColor, shapeType, shapeOutlineType} = props;
     const [tool, setTool] = useState<Tool>();
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -38,12 +39,18 @@ const Canvas: FC<CanvasProps> = (props) => {
                 setTool(new ColorFill());
                 break;
             case ToolType.SHAPE:
-                setTool(new Shape(shapeType));
+                setTool(new Shape(shapeType, shapeOutlineType === ShapeOutlineType.DOTTED));
                 break;
             default:
                 break;
         }
     }, [toolType, shapeType]);
+
+    useEffect(() => {
+        if (tool instanceof Shape) {
+            tool.isDashed = shapeOutlineType === ShapeOutlineType.DOTTED;
+        }
+    }, [shapeOutlineType]);
 
     useEffect(() => {
         switch (lineWidthType) {
