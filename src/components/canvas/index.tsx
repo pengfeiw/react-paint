@@ -109,7 +109,8 @@ const Canvas: FC<CanvasProps> = (props) => {
             const callback = () => {
                 const ctx = canvas.getContext("2d");
                 if (ctx) {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.fillStyle = "white";
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
                 }
             };
             dispatcher.on(CLEAR_EVENT, callback);
