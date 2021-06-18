@@ -5,6 +5,7 @@ import ShapePanel from "./shape";
 import Divider from "@material-ui/core/Divider";
 import ThickSelector from "./thickSelector";
 import ColorPanel from "./colorPanel";
+import OtherOperator from "./other";
 
 const Toolbar = (): JSX.Element => {
     return (
@@ -17,6 +18,7 @@ const Toolbar = (): JSX.Element => {
             <Divider className="divider" orientation="vertical" flexItem />
             <ColorPanel className="toolbar-item" />
             <Divider className="divider" orientation="vertical" flexItem />
+            <OtherOperator />
         </div>
     );
 };

@@ -8,6 +8,9 @@ import {FC} from "react";
 import {useState} from "react";
 import {Pen, Tool, Eraser, ColorExtract, ColorFill} from "../../util/tool";
 import Shape from "../../util/tool/shape";
+import {useContext} from "react";
+import {DispatcherContext} from "../../context";
+import {CLEAR_EVENT} from "../../util/dispatcher/event";
 
 interface CanvasProps {
     toolType: ToolType;
@@ -23,6 +26,7 @@ const Canvas: FC<CanvasProps> = (props) => {
     const {toolType, lineWidthType, mainColor, subColor, setColor, shapeType, shapeOutlineType} = props;
     const [tool, setTool] = useState<Tool>();
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    const dispatcherContext = useContext(DispatcherContext);
 
     useEffect(() => {
         switch (toolType) {
@@ -94,6 +98,19 @@ const Canvas: FC<CanvasProps> = (props) => {
                 ctx.fillStyle = "white";
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
             }
+
+            // 注册清空画布事件
+            const dispatcher = dispatcherContext.dispatcher;
+            const callback = () => {
+                const ctx = canvas.getContext("2d");
+                if (ctx) {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                }
+            };
+            dispatcher.on(CLEAR_EVENT, callback);
+            return () => {
+                dispatcher.off(CLEAR_EVENT, callback);
+            };
         }
     }, [canvasRef]);
 

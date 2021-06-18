@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-empty-function */
 import {createContext} from "react";
+import Dispatcher from "../util/dispatcher";
 import {ColorType, LineWidthType, ShapeOutlineType, ShapeToolType, ToolType} from "../util/toolType";
 
 export const ToolTypeContext = createContext({
@@ -29,4 +30,8 @@ export const ColorContext = createContext({
     activeColor: ColorType.MAIN,
     setColor: (value: string) => {},
     setActiveColor: (type: ColorType) => {}
+});
+
+export const DispatcherContext = createContext({
+    dispatcher: new Dispatcher()
 });
