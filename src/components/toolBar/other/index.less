@@ -1,5 +1,25 @@
 .otherOperator {
-    .operator-item {
-        cursor: pointer;
+    width: 80px;
+    position: relative;
+    .operator-content {
+        display: flex;
+        justify-content: space-between;
+        .operator-item {
+            cursor: pointer;
+            border: 1px solid transparent;
+            width: 24px;
+            height: 24px;
+            &:hover {
+                background-color: #d5e3f3;
+                border: 1px solid #64a5e7;
+            }
+        }
+    }
+
+    .title {
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        bottom: 0px;
     }
 }

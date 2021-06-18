@@ -19,6 +19,7 @@ const Toolbar = (): JSX.Element => {
             <ColorPanel className="toolbar-item" />
             <Divider className="divider" orientation="vertical" flexItem />
             <OtherOperator />
+            <Divider className="divider" orientation="vertical" flexItem />
         </div>
     );
 };
