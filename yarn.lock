@@ -972,7 +972,7 @@
 
 "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.4", "@babel/runtime@^7.8.3", "@babel/runtime@^7.8.7":
   version "7.14.6"
-  resolved "http://nexus3.luban.fit/repository/npm/@babel/runtime/-/runtime-7.14.6.tgz#535203bc0892efc7dec60bdc27b2ecf6e409062d"
+  resolved "https://registry.nlark.com/@babel/runtime/download/@babel/runtime-7.14.6.tgz?cache=0&sync_timestamp=1623708023742&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.14.6.tgz#535203bc0892efc7dec60bdc27b2ecf6e409062d"
   integrity sha1-U1IDvAiS78fexgvcJ7Ls9uQJBi0=
   dependencies:
     regenerator-runtime "^0.13.4"
@@ -1171,7 +1171,7 @@
 
 "@emotion/hash@^0.8.0":
   version "0.8.0"
-  resolved "http://nexus3.luban.fit/repository/npm/@emotion/hash/-/hash-0.8.0.tgz#bbbff68978fefdbe68ccb533bc8cbe1d1afb5413"
+  resolved "https://registry.npm.taobao.org/@emotion/hash/download/@emotion/hash-0.8.0.tgz#bbbff68978fefdbe68ccb533bc8cbe1d1afb5413"
   integrity sha1-u7/2iXj+/b5ozLUzvIy+HRr7VBM=
 
 "@eslint/eslintrc@^0.2.1":
@@ -1411,7 +1411,7 @@
 
 "@material-ui/core@^4.11.4":
   version "4.11.4"
-  resolved "http://nexus3.luban.fit/repository/npm/@material-ui/core/-/core-4.11.4.tgz#4fb9fe5dec5dcf780b687e3a40cff78b2b9640a4"
+  resolved "https://registry.nlark.com/@material-ui/core/download/@material-ui/core-4.11.4.tgz?cache=0&sync_timestamp=1623779052065&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40material-ui%2Fcore%2Fdownload%2F%40material-ui%2Fcore-4.11.4.tgz#4fb9fe5dec5dcf780b687e3a40cff78b2b9640a4"
   integrity sha1-T7n+Xexdz3gLaH46QM/3iyuWQKQ=
   dependencies:
     "@babel/runtime" "^7.4.4"
@@ -1429,14 +1429,14 @@
 
 "@material-ui/icons@^4.11.2":
   version "4.11.2"
-  resolved "http://nexus3.luban.fit/repository/npm/@material-ui/icons/-/icons-4.11.2.tgz#b3a7353266519cd743b6461ae9fdfcb1b25eb4c5"
+  resolved "https://registry.nlark.com/@material-ui/icons/download/@material-ui/icons-4.11.2.tgz?cache=0&sync_timestamp=1623779061230&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40material-ui%2Ficons%2Fdownload%2F%40material-ui%2Ficons-4.11.2.tgz#b3a7353266519cd743b6461ae9fdfcb1b25eb4c5"
   integrity sha1-s6c1MmZRnNdDtkYa6f38sbJetMU=
   dependencies:
     "@babel/runtime" "^7.4.4"
 
 "@material-ui/styles@^4.11.4":
   version "4.11.4"
-  resolved "http://nexus3.luban.fit/repository/npm/@material-ui/styles/-/styles-4.11.4.tgz#eb9dfccfcc2d208243d986457dff025497afa00d"
+  resolved "https://registry.nlark.com/@material-ui/styles/download/@material-ui/styles-4.11.4.tgz?cache=0&sync_timestamp=1622493848853&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40material-ui%2Fstyles%2Fdownload%2F%40material-ui%2Fstyles-4.11.4.tgz#eb9dfccfcc2d208243d986457dff025497afa00d"
   integrity sha1-6538z8wtIIJD2YZFff8CVJevoA0=
   dependencies:
     "@babel/runtime" "^7.4.4"
@@ -1458,7 +1458,7 @@
 
 "@material-ui/system@^4.11.3":
   version "4.11.3"
-  resolved "http://nexus3.luban.fit/repository/npm/@material-ui/system/-/system-4.11.3.tgz#466bc14c9986798fd325665927c963eb47cc4143"
+  resolved "https://registry.nlark.com/@material-ui/system/download/@material-ui/system-4.11.3.tgz?cache=0&sync_timestamp=1623779055395&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40material-ui%2Fsystem%2Fdownload%2F%40material-ui%2Fsystem-4.11.3.tgz#466bc14c9986798fd325665927c963eb47cc4143"
   integrity sha1-RmvBTJmGeY/TJWZZJ8lj60fMQUM=
   dependencies:
     "@babel/runtime" "^7.4.4"
@@ -1468,12 +1468,12 @@
 
 "@material-ui/types@5.1.0":
   version "5.1.0"
-  resolved "http://nexus3.luban.fit/repository/npm/@material-ui/types/-/types-5.1.0.tgz#efa1c7a0b0eaa4c7c87ac0390445f0f88b0d88f2"
+  resolved "https://registry.nlark.com/@material-ui/types/download/@material-ui/types-5.1.0.tgz?cache=0&sync_timestamp=1622493849638&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40material-ui%2Ftypes%2Fdownload%2F%40material-ui%2Ftypes-5.1.0.tgz#efa1c7a0b0eaa4c7c87ac0390445f0f88b0d88f2"
   integrity sha1-76HHoLDqpMfIesA5BEXw+IsNiPI=
 
 "@material-ui/utils@^4.11.2":
   version "4.11.2"
-  resolved "http://nexus3.luban.fit/repository/npm/@material-ui/utils/-/utils-4.11.2.tgz#f1aefa7e7dff2ebcb97d31de51aecab1bb57540a"
+  resolved "https://registry.nlark.com/@material-ui/utils/download/@material-ui/utils-4.11.2.tgz?cache=0&sync_timestamp=1622493848606&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40material-ui%2Futils%2Fdownload%2F%40material-ui%2Futils-4.11.2.tgz#f1aefa7e7dff2ebcb97d31de51aecab1bb57540a"
   integrity sha1-8a76fn3/Lry5fTHeUa7KsbtXVAo=
   dependencies:
     "@babel/runtime" "^7.4.4"
@@ -1759,6 +1759,25 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/color-convert@*":
+  version "2.0.0"
+  resolved "https://registry.nlark.com/@types/color-convert/download/@types/color-convert-2.0.0.tgz#8f5ee6b9e863dcbee5703f5a517ffb13d3ea4e22"
+  integrity sha1-j17muehj3L7lcD9aUX/7E9PqTiI=
+  dependencies:
+    "@types/color-name" "*"
+
+"@types/color-name@*":
+  version "1.1.1"
+  resolved "https://registry.nlark.com/@types/color-name/download/@types/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
+  integrity sha1-HBJhu+qhCoBVu8XYq4S3sq/IRqA=
+
+"@types/color@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.nlark.com/@types/color/download/@types/color-3.0.1.tgz#2900490ed04da8116c5058cd5dba3572d5a25071"
+  integrity sha1-KQBJDtBNqBFsUFjNXbo1ctWiUHE=
+  dependencies:
+    "@types/color-convert" "*"
+
 "@types/eslint@^7.2.0":
   version "7.2.4"
   resolved "https://registry.npm.taobao.org/@types/eslint/download/@types/eslint-7.2.4.tgz#d12eeed7741d2491b69808576ac2d20c14f74c41"
@@ -1866,7 +1885,7 @@
 
 "@types/prettier@^2.0.0":
   version "2.3.0"
-  resolved "http://nexus3.luban.fit/repository/npm/@types/prettier/-/prettier-2.3.0.tgz#2e8332cc7363f887d32ec5496b207d26ba8052bb"
+  resolved "https://registry.nlark.com/@types/prettier/download/@types/prettier-2.3.0.tgz#2e8332cc7363f887d32ec5496b207d26ba8052bb"
   integrity sha1-LoMyzHNj+IfTLsVJayB9JrqAUrs=
 
 "@types/prop-types@*":
@@ -1888,7 +1907,7 @@
 
 "@types/react-transition-group@^4.2.0":
   version "4.4.1"
-  resolved "http://nexus3.luban.fit/repository/npm/@types/react-transition-group/-/react-transition-group-4.4.1.tgz#e1a3cb278df7f47f17b5082b1b3da17170bd44b1"
+  resolved "https://registry.nlark.com/@types/react-transition-group/download/@types/react-transition-group-4.4.1.tgz#e1a3cb278df7f47f17b5082b1b3da17170bd44b1"
   integrity sha1-4aPLJ4339H8XtQgrGz2hcXC9RLE=
   dependencies:
     "@types/react" "*"
@@ -3427,7 +3446,7 @@ clone-deep@^4.0.1:
 
 clsx@^1.0.4:
   version "1.1.1"
-  resolved "http://nexus3.luban.fit/repository/npm/clsx/-/clsx-1.1.1.tgz#98b3134f9abbdf23b2663491ace13c5c03a73188"
+  resolved "https://registry.npm.taobao.org/clsx/download/clsx-1.1.1.tgz#98b3134f9abbdf23b2663491ace13c5c03a73188"
   integrity sha1-mLMTT5q73yOyZjSRrOE8XAOnMYg=
 
 co@^4.6.0:
@@ -3489,9 +3508,9 @@ color-string@^1.5.4:
     color-name "^1.0.0"
     simple-swizzle "^0.2.2"
 
-color@^3.0.0:
+color@^3.0.0, color@^3.1.3:
   version "3.1.3"
-  resolved "https://registry.npm.taobao.org/color/download/color-3.1.3.tgz#ca67fb4e7b97d611dcde39eceed422067d91596e"
+  resolved "https://registry.nlark.com/color/download/color-3.1.3.tgz#ca67fb4e7b97d611dcde39eceed422067d91596e"
   integrity sha1-ymf7TnuX1hHc3jns7tQiBn2RWW4=
   dependencies:
     color-convert "^1.9.1"
@@ -3929,7 +3948,7 @@ css-tree@^1.0.0:
 
 css-vendor@^2.0.8:
   version "2.0.8"
-  resolved "http://nexus3.luban.fit/repository/npm/css-vendor/-/css-vendor-2.0.8.tgz#e47f91d3bd3117d49180a3c935e62e3d9f7f449d"
+  resolved "https://registry.npm.taobao.org/css-vendor/download/css-vendor-2.0.8.tgz#e47f91d3bd3117d49180a3c935e62e3d9f7f449d"
   integrity sha1-5H+R070xF9SRgKPJNeYuPZ9/RJ0=
   dependencies:
     "@babel/runtime" "^7.8.3"
@@ -4078,7 +4097,7 @@ cssstyle@^2.2.0:
 
 csstype@^2.5.2:
   version "2.6.17"
-  resolved "http://nexus3.luban.fit/repository/npm/csstype/-/csstype-2.6.17.tgz#4cf30eb87e1d1a005d8b6510f95292413f6a1c0e"
+  resolved "https://registry.nlark.com/csstype/download/csstype-2.6.17.tgz#4cf30eb87e1d1a005d8b6510f95292413f6a1c0e"
   integrity sha1-TPMOuH4dGgBdi2UQ+VKSQT9qHA4=
 
 csstype@^3.0.2:
@@ -4371,7 +4390,7 @@ dom-converter@^0.2:
 
 dom-helpers@^5.0.1:
   version "5.2.1"
-  resolved "http://nexus3.luban.fit/repository/npm/dom-helpers/-/dom-helpers-5.2.1.tgz#d9400536b2bf8225ad98fe052e029451ac40e902"
+  resolved "https://registry.nlark.com/dom-helpers/download/dom-helpers-5.2.1.tgz#d9400536b2bf8225ad98fe052e029451ac40e902"
   integrity sha1-2UAFNrK/giWtmP4FLgKUUaxA6QI=
   dependencies:
     "@babel/runtime" "^7.8.7"
@@ -5968,7 +5987,7 @@ husky@^4.3.0:
 
 hyphenate-style-name@^1.0.3:
   version "1.0.4"
-  resolved "http://nexus3.luban.fit/repository/npm/hyphenate-style-name/-/hyphenate-style-name-1.0.4.tgz#691879af8e220aea5750e8827db4ef62a54e361d"
+  resolved "https://registry.npm.taobao.org/hyphenate-style-name/download/hyphenate-style-name-1.0.4.tgz#691879af8e220aea5750e8827db4ef62a54e361d"
   integrity sha1-aRh5r44iCupXUOiCfbTvYqVONh0=
 
 iconv-lite@0.4.24, iconv-lite@^0.4.24:
@@ -6075,7 +6094,7 @@ imurmurhash@^0.1.4:
 
 indefinite-observable@^2.0.1:
   version "2.0.1"
-  resolved "http://nexus3.luban.fit/repository/npm/indefinite-observable/-/indefinite-observable-2.0.1.tgz#574af29bfbc17eb5947793797bddc94c9d859400"
+  resolved "https://registry.npm.taobao.org/indefinite-observable/download/indefinite-observable-2.0.1.tgz#574af29bfbc17eb5947793797bddc94c9d859400"
   integrity sha1-V0rym/vBfrWUd5N5e93JTJ2FlAA=
   dependencies:
     symbol-observable "1.2.0"
@@ -6358,7 +6377,7 @@ is-glob@^4.0.0, is-glob@^4.0.1, is-glob@~4.0.1:
 
 is-in-browser@^1.0.2, is-in-browser@^1.1.3:
   version "1.1.3"
-  resolved "http://nexus3.luban.fit/repository/npm/is-in-browser/-/is-in-browser-1.1.3.tgz#56ff4db683a078c6082eb95dad7dc62e1d04f835"
+  resolved "https://registry.npm.taobao.org/is-in-browser/download/is-in-browser-1.1.3.tgz#56ff4db683a078c6082eb95dad7dc62e1d04f835"
   integrity sha1-Vv9NtoOgeMYILrldrX3GLh0E+DU=
 
 is-module@^1.0.0:
@@ -7153,7 +7172,7 @@ jsprim@^1.2.2:
 
 jss-plugin-camel-case@^10.5.1:
   version "10.6.0"
-  resolved "http://nexus3.luban.fit/repository/npm/jss-plugin-camel-case/-/jss-plugin-camel-case-10.6.0.tgz#93d2cd704bf0c4af70cc40fb52d74b8a2554b170"
+  resolved "https://registry.npm.taobao.org/jss-plugin-camel-case/download/jss-plugin-camel-case-10.6.0.tgz#93d2cd704bf0c4af70cc40fb52d74b8a2554b170"
   integrity sha1-k9LNcEvwxK9wzED7UtdLiiVUsXA=
   dependencies:
     "@babel/runtime" "^7.3.1"
@@ -7162,7 +7181,7 @@ jss-plugin-camel-case@^10.5.1:
 
 jss-plugin-default-unit@^10.5.1:
   version "10.6.0"
-  resolved "http://nexus3.luban.fit/repository/npm/jss-plugin-default-unit/-/jss-plugin-default-unit-10.6.0.tgz#af47972486819b375f0f3a9e0213403a84b5ef3b"
+  resolved "https://registry.npm.taobao.org/jss-plugin-default-unit/download/jss-plugin-default-unit-10.6.0.tgz#af47972486819b375f0f3a9e0213403a84b5ef3b"
   integrity sha1-r0eXJIaBmzdfDzqeAhNAOoS17zs=
   dependencies:
     "@babel/runtime" "^7.3.1"
@@ -7170,7 +7189,7 @@ jss-plugin-default-unit@^10.5.1:
 
 jss-plugin-global@^10.5.1:
   version "10.6.0"
-  resolved "http://nexus3.luban.fit/repository/npm/jss-plugin-global/-/jss-plugin-global-10.6.0.tgz#3e8011f760f399cbadcca7f10a485b729c50e3ed"
+  resolved "https://registry.npm.taobao.org/jss-plugin-global/download/jss-plugin-global-10.6.0.tgz?cache=0&sync_timestamp=1615713101572&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fjss-plugin-global%2Fdownload%2Fjss-plugin-global-10.6.0.tgz#3e8011f760f399cbadcca7f10a485b729c50e3ed"
   integrity sha1-PoAR92DzmcutzKfxCkhbcpxQ4+0=
   dependencies:
     "@babel/runtime" "^7.3.1"
@@ -7178,7 +7197,7 @@ jss-plugin-global@^10.5.1:
 
 jss-plugin-nested@^10.5.1:
   version "10.6.0"
-  resolved "http://nexus3.luban.fit/repository/npm/jss-plugin-nested/-/jss-plugin-nested-10.6.0.tgz#5f83c5c337d3b38004834e8426957715a0251641"
+  resolved "https://registry.npm.taobao.org/jss-plugin-nested/download/jss-plugin-nested-10.6.0.tgz?cache=0&sync_timestamp=1615713101521&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fjss-plugin-nested%2Fdownload%2Fjss-plugin-nested-10.6.0.tgz#5f83c5c337d3b38004834e8426957715a0251641"
   integrity sha1-X4PFwzfTs4AEg06EJpV3FaAlFkE=
   dependencies:
     "@babel/runtime" "^7.3.1"
@@ -7187,7 +7206,7 @@ jss-plugin-nested@^10.5.1:
 
 jss-plugin-props-sort@^10.5.1:
   version "10.6.0"
-  resolved "http://nexus3.luban.fit/repository/npm/jss-plugin-props-sort/-/jss-plugin-props-sort-10.6.0.tgz#297879f35f9fe21196448579fee37bcde28ce6bc"
+  resolved "https://registry.npm.taobao.org/jss-plugin-props-sort/download/jss-plugin-props-sort-10.6.0.tgz#297879f35f9fe21196448579fee37bcde28ce6bc"
   integrity sha1-KXh581+f4hGWRIV5/uN7zeKM5rw=
   dependencies:
     "@babel/runtime" "^7.3.1"
@@ -7195,7 +7214,7 @@ jss-plugin-props-sort@^10.5.1:
 
 jss-plugin-rule-value-function@^10.5.1:
   version "10.6.0"
-  resolved "http://nexus3.luban.fit/repository/npm/jss-plugin-rule-value-function/-/jss-plugin-rule-value-function-10.6.0.tgz#3c1a557236a139d0151e70a82c810ccce1c1c5ea"
+  resolved "https://registry.npm.taobao.org/jss-plugin-rule-value-function/download/jss-plugin-rule-value-function-10.6.0.tgz?cache=0&sync_timestamp=1615713101018&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fjss-plugin-rule-value-function%2Fdownload%2Fjss-plugin-rule-value-function-10.6.0.tgz#3c1a557236a139d0151e70a82c810ccce1c1c5ea"
   integrity sha1-PBpVcjahOdAVHnCoLIEMzOHBxeo=
   dependencies:
     "@babel/runtime" "^7.3.1"
@@ -7204,7 +7223,7 @@ jss-plugin-rule-value-function@^10.5.1:
 
 jss-plugin-vendor-prefixer@^10.5.1:
   version "10.6.0"
-  resolved "http://nexus3.luban.fit/repository/npm/jss-plugin-vendor-prefixer/-/jss-plugin-vendor-prefixer-10.6.0.tgz#e1fcd499352846890c38085b11dbd7aa1c4f2c78"
+  resolved "https://registry.npm.taobao.org/jss-plugin-vendor-prefixer/download/jss-plugin-vendor-prefixer-10.6.0.tgz#e1fcd499352846890c38085b11dbd7aa1c4f2c78"
   integrity sha1-4fzUmTUoRokMOAhbEdvXqhxPLHg=
   dependencies:
     "@babel/runtime" "^7.3.1"
@@ -7213,7 +7232,7 @@ jss-plugin-vendor-prefixer@^10.5.1:
 
 jss@10.6.0, jss@^10.5.1:
   version "10.6.0"
-  resolved "http://nexus3.luban.fit/repository/npm/jss/-/jss-10.6.0.tgz#d92ff9d0f214f65ca1718591b68e107be4774149"
+  resolved "https://registry.npm.taobao.org/jss/download/jss-10.6.0.tgz#d92ff9d0f214f65ca1718591b68e107be4774149"
   integrity sha1-2S/50PIU9lyhcYWRto4Qe+R3QUk=
   dependencies:
     "@babel/runtime" "^7.3.1"
@@ -7624,7 +7643,7 @@ map-visit@^1.0.0:
 
 material-ui-color@^1.2.0:
   version "1.2.0"
-  resolved "http://nexus3.luban.fit/repository/npm/material-ui-color/-/material-ui-color-1.2.0.tgz#3dde809e9f5f4a29499add83640aeadaaec36f6c"
+  resolved "https://registry.nlark.com/material-ui-color/download/material-ui-color-1.2.0.tgz#3dde809e9f5f4a29499add83640aeadaaec36f6c"
   integrity sha1-Pd6Anp9fSilJmt2DZArq2q7Db2w=
 
 md5.js@^1.3.4:
@@ -8692,7 +8711,7 @@ pnp-webpack-plugin@1.6.4:
 
 popper.js@1.16.1-lts:
   version "1.16.1-lts"
-  resolved "http://nexus3.luban.fit/repository/npm/popper.js/-/popper.js-1.16.1-lts.tgz#cf6847b807da3799d80ee3d6d2f90df8a3f50b05"
+  resolved "https://registry.npm.taobao.org/popper.js/download/popper.js-1.16.1-lts.tgz#cf6847b807da3799d80ee3d6d2f90df8a3f50b05"
   integrity sha1-z2hHuAfaN5nYDuPW0vkN+KP1CwU=
 
 portfinder@^1.0.26:
@@ -9683,7 +9702,7 @@ react-is@^16.7.0, react-is@^16.8.1:
 
 "react-is@^16.8.0 || ^17.0.0":
   version "17.0.2"
-  resolved "http://nexus3.luban.fit/repository/npm/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
+  resolved "https://registry.nlark.com/react-is/download/react-is-17.0.2.tgz?cache=0&sync_timestamp=1624033239156&other_urls=https%3A%2F%2Fregistry.nlark.com%2Freact-is%2Fdownload%2Freact-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha1-5pHUqOnHiTZWVVOas3J2Kw77VPA=
 
 react-is@^17.0.1:
@@ -9763,7 +9782,7 @@ react-scripts@4.0.0:
 
 react-transition-group@^4.4.0:
   version "4.4.2"
-  resolved "http://nexus3.luban.fit/repository/npm/react-transition-group/-/react-transition-group-4.4.2.tgz#8b59a56f09ced7b55cbd53c36768b922890d5470"
+  resolved "https://registry.nlark.com/react-transition-group/download/react-transition-group-4.4.2.tgz?cache=0&sync_timestamp=1622300448210&other_urls=https%3A%2F%2Fregistry.nlark.com%2Freact-transition-group%2Fdownload%2Freact-transition-group-4.4.2.tgz#8b59a56f09ced7b55cbd53c36768b922890d5470"
   integrity sha1-i1mlbwnO17VcvVPDZ2i5IokNVHA=
   dependencies:
     "@babel/runtime" "^7.5.5"
@@ -11087,7 +11106,7 @@ svgo@^1.0.0, svgo@^1.2.2:
 
 symbol-observable@1.2.0:
   version "1.2.0"
-  resolved "http://nexus3.luban.fit/repository/npm/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
+  resolved "https://registry.nlark.com/symbol-observable/download/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
   integrity sha1-wiaIrtTqs83C3+rLtWFmBWCgCAQ=
 
 symbol-tree@^3.2.4:
@@ -11256,7 +11275,7 @@ timsort@^0.3.0:
 
 tiny-warning@^1.0.2:
   version "1.0.3"
-  resolved "http://nexus3.luban.fit/repository/npm/tiny-warning/-/tiny-warning-1.0.3.tgz#94a30db453df4c643d0fd566060d60a875d84754"
+  resolved "https://registry.npm.taobao.org/tiny-warning/download/tiny-warning-1.0.3.tgz#94a30db453df4c643d0fd566060d60a875d84754"
   integrity sha1-lKMNtFPfTGQ9D9VmBg1gqHXYR1Q=
 
 tmp@^0.0.33:
