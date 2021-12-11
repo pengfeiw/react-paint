@@ -166,7 +166,7 @@ class Shape extends Tool {
         }
     }
 
-    public onMouseUp(event: MouseEvent): void {
+    public onMouseUp(): void {
         this.isMouseDown = false;
         this.saveImageData = undefined;
     }
