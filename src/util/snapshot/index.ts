@@ -7,6 +7,9 @@ class Snapshot {
     public add(imageData: ImageData) {
         this.imageData1.push(imageData);
     }
+    public get current() {
+        return this.imageData1[this.imageData1.length - 1];
+    }
     public back() {
         if (this.imageData1.length > 1) {
             const imageData = this.imageData1.pop() as ImageData;

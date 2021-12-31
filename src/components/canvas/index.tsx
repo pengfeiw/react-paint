@@ -89,10 +89,9 @@ const Canvas: FC<CanvasProps> = (props) => {
     useEffect(() => {
         const canvas = canvasRef.current;
         if (canvas) {
-            canvas.style.width = "100%";
-            canvas.style.height = "100%";
             canvas.height = canvas.clientHeight;
             canvas.width = canvas.clientWidth;
+
             Tool.ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
 
             // 初始化，将画布绘制成白色底，否则提取颜色会变成黑色
@@ -140,6 +139,16 @@ const Canvas: FC<CanvasProps> = (props) => {
                 }
             };
             dispatcher.on(UNDO_EVENT, back);
+
+            window.addEventListener("resize", () => {
+                const canvasData = Tool.ctx.getImageData(0, 0, canvas.width, canvas.height);
+                canvas.height = canvas.clientHeight;
+                canvas.width = canvas.clientWidth;
+                Tool.ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
+                Tool.ctx.fillStyle = "white";
+                Tool.ctx.fillRect(0, 0, canvas.width, canvas.height);
+                Tool.ctx.putImageData(canvasData, 0, 0);
+            });
 
             return () => {
                 dispatcher.off(CLEAR_EVENT, callback);
@@ -212,13 +221,10 @@ const Canvas: FC<CanvasProps> = (props) => {
         }
     }, [canvasRef, onMouseDown, onMouseMove, onMouseUp]);
 
+
     return (
-        <div className="canvas">
-            <Paper className="paper">
-                <canvas ref={canvasRef} />
-            </Paper>
-        </div>
-    );
+        <canvas className="canvas" ref={canvasRef} />
+    )
 };
 
 export default Canvas;
