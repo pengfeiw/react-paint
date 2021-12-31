@@ -1,4 +1,4 @@
-import Tool, {getMousePos} from "./tool";
+import Tool, {getMousePos, getTouchPos, Point} from "./tool";
 import Color from "color";
 
 /**
@@ -82,10 +82,20 @@ const fillPixel = (colorLayer: ImageData, pixelPos: number, color: [number, numb
 }
 
 class ColorFill extends Tool {
-    public onMouseDown(event: MouseEvent): void {
-        const mousepos = getMousePos(Tool.ctx.canvas, event);
+    private operateStart(pos: Point) {
         const color = new Color(Tool.mainColor);
-        efficentFloodFill(Tool.ctx, mousepos.x, mousepos.y, [color.red(), color.green(), color.blue()]);
+        efficentFloodFill(Tool.ctx, pos.x, pos.y, [color.red(), color.green(), color.blue()]);
+    }
+    public onMouseDown(event: MouseEvent): void {
+        event.preventDefault();
+        const mousepos = getMousePos(Tool.ctx.canvas, event);
+        this.operateStart(mousepos);
+    }
+
+    public onTouchStart(event: TouchEvent): void {
+        event.preventDefault();
+        const touchpos = getTouchPos(event.target as HTMLCanvasElement, event);
+        this.operateStart(touchpos);
     }
 }
 

@@ -1,5 +1,5 @@
 import {ShapeToolType} from "../toolType";
-import Tool, {Point, getMousePos} from "./tool";
+import Tool, {Point, getMousePos, getTouchPos} from "./tool";
 
 /**
  * 根据形状类型，获取要绘制的形状的顶点(圆形，返回圆心)
@@ -123,23 +123,21 @@ class Shape extends Tool {
         this.type = type;
     }
 
-    public onMouseDown(event: MouseEvent): void {
-        const mousePos = getMousePos(Tool.ctx.canvas, event);
+    private operateStart(pos: {x: number; y: number}) {
         this.saveImageData = Tool.ctx.getImageData(0, 0, Tool.ctx.canvas.width, Tool.ctx.canvas.height);
         this.isMouseDown = true;
-        this.mouseDownPos = mousePos;
+        this.mouseDownPos = pos;
     }
 
-    public onMouseMove(event: MouseEvent): void {
+    private operateMove(pos: {x: number; y: number}) {
         if (this.isMouseDown && this.saveImageData) {
             const ctx = Tool.ctx;
             // 清空画布
             ctx.clearRect(0, 0, Tool.ctx.canvas.width, Tool.ctx.canvas.height);
-            
+
             // 绘制
             ctx.putImageData(this.saveImageData, 0, 0);
-            const mousePos = getMousePos(Tool.ctx.canvas, event);
-            const vertexs: Point[] = getVertexs(this.type, this.mouseDownPos.x, this.mouseDownPos.y, mousePos.x, mousePos.y);
+            const vertexs: Point[] = getVertexs(this.type, this.mouseDownPos.x, this.mouseDownPos.y, pos.x, pos.y);
 
             ctx.strokeStyle = Tool.mainColor;
             ctx.lineWidth = Tool.lineWidthFactor * this.lineWidthBase;
@@ -150,7 +148,7 @@ class Shape extends Tool {
 
             if (this.type === ShapeToolType.CIRCLE) {
                 ctx.beginPath();
-                ctx.ellipse(vertexs[0].x, vertexs[0].y, Math.abs(0.5 * (mousePos.x - this.mouseDownPos.x)), Math.abs(0.5 * (mousePos.y - this.mouseDownPos.y)), 0, 0, Math.PI * 2);
+                ctx.ellipse(vertexs[0].x, vertexs[0].y, Math.abs(0.5 * (pos.x - this.mouseDownPos.x)), Math.abs(0.5 * (pos.y - this.mouseDownPos.y)), 0, 0, Math.PI * 2);
                 ctx.stroke();
             } else {
                 ctx.beginPath();
@@ -166,9 +164,47 @@ class Shape extends Tool {
         }
     }
 
-    public onMouseUp(): void {
+    private operateEnd() {
         this.isMouseDown = false;
         this.saveImageData = undefined;
+    }
+
+    public onMouseDown(event: MouseEvent): void {
+        event.preventDefault();
+        const mousePos = getMousePos(Tool.ctx.canvas, event);
+        this.operateStart(mousePos);
+    }
+
+    public onMouseMove(event: MouseEvent): void {
+        event.preventDefault();
+        const mousePos = getMousePos(Tool.ctx.canvas, event);
+        this.operateMove(mousePos);
+    }
+
+    public onMouseUp(event: MouseEvent): void {
+        event.preventDefault();
+        this.operateEnd();
+    }
+
+    public onTouchStart(event: TouchEvent): void {
+        event.preventDefault();
+        const canvas = event.target as HTMLCanvasElement;
+        const touchPos = getTouchPos(canvas, event);
+
+        this.operateStart(touchPos);
+    }
+
+    public onTouchMove(event: TouchEvent): void {
+        event.preventDefault();
+        const canvas = event.target as HTMLCanvasElement;
+        const touchPos = getTouchPos(canvas, event);
+
+        this.operateMove(touchPos);
+    }
+
+    public onTouchEnd(event: TouchEvent): void {
+        event.preventDefault();
+        this.operateEnd();
     }
 }
 

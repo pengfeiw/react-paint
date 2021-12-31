@@ -1,4 +1,4 @@
-import Tool, {getPixelColorOnCanvas, getMousePos} from "./tool";
+import Tool, {getPixelColorOnCanvas, getMousePos, getTouchPos} from "./tool";
 
 class ColorExtract extends Tool {
     private setColor: (color: string) => void;
@@ -10,10 +10,23 @@ class ColorExtract extends Tool {
         super();
         this.setColor = setColor;
     }
-    public onMouseDown(event: MouseEvent): void {
-        const mousepos = getMousePos(Tool.ctx.canvas, event);
-        const color = getPixelColorOnCanvas(Tool.ctx, mousepos.x, mousepos.y);
+
+    private operateStart(pos: {x: number; y: number}) {
+        const color = getPixelColorOnCanvas(Tool.ctx, pos.x, pos.y);
         this.setColor(color);
+    }
+    public onMouseDown(event: MouseEvent): void {
+        event.preventDefault();
+        const mousepos = getMousePos(Tool.ctx.canvas, event);
+        this.operateStart(mousepos);
+    }
+
+    public onTouchStart(event: TouchEvent): void {
+        event.preventDefault();
+        const canvas = event.target as HTMLCanvasElement;
+        const touchPos = getTouchPos(canvas, event);
+
+        this.operateStart(touchPos);
     }
 }
 

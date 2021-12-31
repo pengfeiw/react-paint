@@ -168,6 +168,27 @@ const Canvas: FC<CanvasProps> = (props) => {
         }
     };
 
+    const onTouchStart = (event: TouchEvent) => {
+        if (tool) {
+            tool.onTouchStart(event);
+        }
+    };
+
+    const onTouchMove = (event: TouchEvent) => {
+        if (tool) {
+            tool.onTouchMove(event);
+        }
+    };
+
+    const onTouchEnd = (event: TouchEvent) => {
+        if (tool) {
+            tool.onTouchEnd(event);
+        }
+
+        // 存储canvas剪影
+        snapshot.add(Tool.ctx.getImageData(0, 0, Tool.ctx.canvas.width, Tool.ctx.canvas.height));
+    };
+
     useEffect(() => {
         const canvas = canvasRef.current;
         if (canvas) {
@@ -175,10 +196,18 @@ const Canvas: FC<CanvasProps> = (props) => {
             canvas.addEventListener("mousemove", onMouseMove);
             canvas.addEventListener("mouseup", onMouseUp);
 
+            canvas.addEventListener("touchstart", onTouchStart);
+            canvas.addEventListener("touchmove", onTouchMove);
+            canvas.addEventListener("touchend", onTouchEnd);
+
             return () => {
                 canvas.removeEventListener("mousedown", onMouseDown);
                 canvas.removeEventListener("mousemove", onMouseMove);
                 canvas.removeEventListener("mouseup", onMouseUp);
+
+                canvas.removeEventListener("touchstart", onTouchStart);
+                canvas.removeEventListener("touchmove", onTouchMove);
+                canvas.removeEventListener("touchend", onTouchEnd);
             };
         }
     }, [canvasRef, onMouseDown, onMouseMove, onMouseUp]);

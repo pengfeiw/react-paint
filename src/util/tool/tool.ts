@@ -12,6 +12,13 @@ export const getMousePos = (canvas: HTMLCanvasElement, event: MouseEvent): Point
     };
 };
 
+export const getTouchPos = (canvas: HTMLCanvasElement, event: TouchEvent): Point => {
+    return {
+        x: event.touches[0].pageX - canvas.offsetLeft,
+        y: event.touches[0].pageY - canvas.offsetTop
+    }
+};
+
 const rgbToHex = (r: number, g: number, b: number) => {
     if (r > 255 || g > 255 || b > 255)
         throw "Invalid color component";
@@ -52,24 +59,16 @@ export default class Tool {
     public onMouseUp(event: MouseEvent): void {
         //
     }
-}
 
-export class ColorFill extends Tool {
+    public onTouchStart(event: TouchEvent): void {
+        //
+    }
 
-}
+    public onTouchMove(event: TouchEvent): void {
+        //
+    }
 
-export class Text extends Tool {
-    
-}
-
-export class ColorExtract extends Tool {
-
-}
-
-export class Eraser extends Tool {
-
-}
-
-export class Magnifying extends Tool {
-
+    public onTouchEnd(event: TouchEvent): void {
+        //
+    }
 }
