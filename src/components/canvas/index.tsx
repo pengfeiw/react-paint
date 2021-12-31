@@ -1,5 +1,4 @@
 import React from "react";
-import {Paper} from "@material-ui/core";
 import "./index.less";
 import {useEffect} from "react";
 import {useRef} from "react";
