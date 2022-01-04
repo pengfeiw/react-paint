@@ -6,7 +6,12 @@ import Color from "color";
  * 参考地址: http://www.williammalone.com/articles/html5-canvas-javascript-paint-bucket-tool/
  */
 const efficentFloodFill = (ctx: CanvasRenderingContext2D, startX: number, startY: number, fillColor: [number, number, number]) => {
-    const pixelStack: [number, number][] = [[startX, startY]];
+    // 保证 startX 和 startY 是正整数
+    // 经测试，在触屏设备中 startX 和 startY 可能是小数，造成填充功能无法正确填充
+    startX = Math.round(startX);
+    startY = Math.round(startY);
+    const pixelStack: [number, number][] = [[Math.round(startX), Math.round(startY)]];
+    console.log(startX, startY);
     const canvasWidth = ctx.canvas.width, canvasHeight = ctx.canvas.height;
     const startPos = (startY * canvasWidth + startX) * 4;
     const colorLayer = ctx.getImageData(0, 0, canvasWidth, canvasHeight);
@@ -93,7 +98,9 @@ class ColorFill extends Tool {
     }
 
     public onTouchStart(event: TouchEvent): void {
-        event.preventDefault();
+        if (event.cancelable) {
+            event.preventDefault();
+        }
         const touchpos = getTouchPos(event.target as HTMLCanvasElement, event);
         this.operateStart(touchpos);
     }

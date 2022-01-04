@@ -22,7 +22,9 @@ class ColorExtract extends Tool {
     }
 
     public onTouchStart(event: TouchEvent): void {
-        event.preventDefault();
+        if (event.cancelable) {
+            event.preventDefault();
+        }
         const canvas = event.target as HTMLCanvasElement;
         const touchPos = getTouchPos(canvas, event);
 

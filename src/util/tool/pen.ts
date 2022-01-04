@@ -55,19 +55,25 @@ class Pen extends Tool {
     }
 
     public onTouchStart(event: TouchEvent): void {
-        event.preventDefault();
+        if (event.cancelable) {
+            event.preventDefault();
+        }
         const touchPos = getTouchPos(event.target as HTMLCanvasElement, event);
         this.operateStart(touchPos);
     }
 
     public onTouchMove(event: TouchEvent): void {
-        event.preventDefault();
+        if (event.cancelable) {
+            event.preventDefault();
+        }
         const touchPos = getTouchPos(event.target as HTMLCanvasElement, event);
         this.operateMove(touchPos);
     }
 
     public onTouchEnd(event: TouchEvent): void {
-        event.preventDefault();
+        if (event.cancelable) {
+            event.preventDefault();
+        }
         this.operateEnd();
     }
 }

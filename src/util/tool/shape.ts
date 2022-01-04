@@ -187,7 +187,9 @@ class Shape extends Tool {
     }
 
     public onTouchStart(event: TouchEvent): void {
-        event.preventDefault();
+        if (event.cancelable) {
+            event.preventDefault();
+        }
         const canvas = event.target as HTMLCanvasElement;
         const touchPos = getTouchPos(canvas, event);
 
@@ -195,7 +197,9 @@ class Shape extends Tool {
     }
 
     public onTouchMove(event: TouchEvent): void {
-        event.preventDefault();
+        if (event.cancelable) {
+            event.preventDefault();
+        }
         const canvas = event.target as HTMLCanvasElement;
         const touchPos = getTouchPos(canvas, event);
 
@@ -203,7 +207,9 @@ class Shape extends Tool {
     }
 
     public onTouchEnd(event: TouchEvent): void {
-        event.preventDefault();
+        if (event.cancelable) {
+            event.preventDefault();
+        }
         this.operateEnd();
     }
 }
