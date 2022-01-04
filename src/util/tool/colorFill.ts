@@ -11,7 +11,6 @@ const efficentFloodFill = (ctx: CanvasRenderingContext2D, startX: number, startY
     startX = Math.round(startX);
     startY = Math.round(startY);
     const pixelStack: [number, number][] = [[Math.round(startX), Math.round(startY)]];
-    console.log(startX, startY);
     const canvasWidth = ctx.canvas.width, canvasHeight = ctx.canvas.height;
     const startPos = (startY * canvasWidth + startX) * 4;
     const colorLayer = ctx.getImageData(0, 0, canvasWidth, canvasHeight);
