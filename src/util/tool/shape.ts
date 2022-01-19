@@ -127,24 +127,28 @@ class Shape extends Tool {
         this.saveImageData = Tool.ctx.getImageData(0, 0, Tool.ctx.canvas.width, Tool.ctx.canvas.height);
         this.isMouseDown = true;
         this.mouseDownPos = pos;
+
+        Tool.ctx.strokeStyle = Tool.mainColor;
+        Tool.ctx.lineWidth = Tool.lineWidthFactor * this.lineWidthBase;
+        Tool.ctx.fillStyle = Tool.subColor;
+        if (this.isDashed) {
+            Tool.ctx.setLineDash(this.dashLineStyle);
+        }
+        
+        // A line is always drawn on half of a pixel for even stroke widths.
+        // So translate 0.5 pixel
+        if (Tool.ctx.lineWidth % 2 !== 0) {
+            Tool.ctx.translate(0.5, 0.5);
+        }
     }
 
     private operateMove(pos: {x: number; y: number}) {
         if (this.isMouseDown && this.saveImageData) {
             const ctx = Tool.ctx;
-            // 清空画布
             ctx.clearRect(0, 0, Tool.ctx.canvas.width, Tool.ctx.canvas.height);
 
-            // 绘制
             ctx.putImageData(this.saveImageData, 0, 0);
             const vertexs: Point[] = getVertexs(this.type, this.mouseDownPos.x, this.mouseDownPos.y, pos.x, pos.y);
-
-            ctx.strokeStyle = Tool.mainColor;
-            ctx.lineWidth = Tool.lineWidthFactor * this.lineWidthBase;
-            ctx.fillStyle = Tool.subColor;
-            if (this.isDashed) {
-                ctx.setLineDash(this.dashLineStyle);
-            }
 
             if (this.type === ShapeToolType.CIRCLE) {
                 ctx.beginPath();
@@ -160,11 +164,15 @@ class Shape extends Tool {
                 ctx.stroke();
             }
 
-            ctx.setLineDash([]);
         }
     }
 
     private operateEnd() {
+        Tool.ctx.setLineDash([]);
+        // reset translate
+        if (Tool.ctx.lineWidth % 2 !== 0) {
+            Tool.ctx.translate(-0.5, -0.5);
+        }
         this.isMouseDown = false;
         this.saveImageData = undefined;
     }
