@@ -14,87 +14,87 @@ interface ColorPanelProps {
 const colors = [
     {
         title: "黑色",
-        value: "#000000"
+        value: "#000000ff"
     },
     {
         title: "灰色-50%",
-        value: "#7f7f7f"
+        value: "#7f7f7fff"
     },
     {
         title: "深红色",
-        value: "#880015"
+        value: "#880015ff"
     },
     {
         title: "红色",
-        value: "#ed1c24"
+        value: "#ed1c24ff"
     },
     {
         title: "橙色",
-        value: "#ff7f27"
+        value: "#ff7f27ff"
     },
     {
         title: "黄色",
-        value: "#fff200"
+        value: "#fff200ff"
     },
     {
         title: "绿色",
-        value: "#22b14c"
+        value: "#22b14cff"
     },
     {
         title: "青绿色",
-        value: "#00a2e8"
+        value: "#00a2e8ff"
     },
     {
         title: "蓝青色",
-        value: "#3f48cc"
+        value: "#3f48ccff"
     },
     {
         title: "紫色",
-        value: "#a349a4"
+        value: "#a349a4ff"
     },
     {
         title: "白色",
-        value: "#ffffff"
+        value: "#ffffffff"
     },
     {
         title: "灰色-25%",
-        value: "#c3c3c3"
+        value: "#c3c3c3ff"
     },
     {
         title: "褐色",
-        value: "#b97a57"
+        value: "#b97a57ff"
     },
     {
         title: "玫瑰色",
-        value: "#ffaec9"
+        value: "#ffaec9ff"
     },
     {
         title: "金色",
-        value: "#ffc90e"
+        value: "#ffc90eff"
     },
     {
         title: "浅黄色",
-        value: "#efe4b0"
+        value: "#efe4b0ff"
     },
     {
         title: "酸橙色",
-        value: "#b5e61d"
+        value: "#b5e61dff"
     },
     {
         title: "青绿色",
-        value: "#808000"
+        value: "#808000ff"
     },
     {
         title: "淡青蓝色",
-        value: "#99d9ea"
+        value: "#99d9eaff"
     },
     {
         title: "蓝灰色",
-        value: "#7092be"
+        value: "#7092beff"
     },
     {
         title: "淡紫色",
-        value: "#c8bfe7"
+        value: "#c8bfe7ff"
     }
 ];
 
@@ -102,7 +102,7 @@ const activeColorTypeCls = "active-color-type";
 
 const ColorPanel: React.FC<ColorPanelProps> = (props) => {
     const {className} = props;
-    const [pickerColor, setPickerColor] = useState(createColor("black"));
+    const [pickerColor, setPickerColor] = useState(createColor("#000000FF"));
     const colorContext = useContext(ColorContext);
     const activeColorType = colorContext.activeColor;
 

@@ -19,17 +19,30 @@ export const getTouchPos = (canvas: HTMLCanvasElement, event: TouchEvent): Point
     }
 };
 
-const rgbToHex = (r: number, g: number, b: number) => {
-    if (r > 255 || g > 255 || b > 255)
-        throw "Invalid color component";
-    return ((r << 16) | (g << 8) | b).toString(16);
+const rgbToHex = (r: number, g: number, b: number, a?: number) => {
+    const componentToHex = (c: number) => {
+        const hex = c.toString(16);
+        return hex.length == 1 ? "0" + hex : hex;
+    }
+
+    const res = "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+
+    return a ? res + componentToHex(a) : res;
+};
+
+const hexToRgb = (hex: string) => {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
 };
 
 export const getPixelColorOnCanvas = (ctx: CanvasRenderingContext2D, x: number, y: number): string => {
     const p = ctx.getImageData(x, y, 1, 1).data;
 
-    const hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
-    return hex;
+    return rgbToHex(p[0], p[1], p[2], p[3]);
 };
 
 export default class Tool {
