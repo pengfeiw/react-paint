@@ -1,6 +1,5 @@
-import Color from "color";
 import {ShapeToolType} from "../toolType";
-import Tool, {Point, getMousePos, getTouchPos} from "./tool";
+import Tool, {Point, getMousePos, getTouchPos, hexToRgb, updateImageData} from "./tool";
 
 /**
  * 根据形状类型，获取要绘制的形状的顶点(圆形，返回圆心)
@@ -107,34 +106,6 @@ const getVertexs = (type: ShapeToolType, sx: number, sy: number, ex: number, ey:
     return points;
 };
 
-const updateImageData = (origin: ImageData, data: ImageData, fillData: [number, number, number, number]) => {
-    for (let row = 0; row < data.height; row++) {
-        for (let col = 0; col < data.width; col++) {
-            const index = row * data.width * 4 + col * 4;
-            const r1 = data.data[index];
-            const g1 = data.data[index + 1];
-            const b1 = data.data[index + 2];
-            const a1 = data.data[index + 3];
-
-            const r2 = origin.data[index];
-            const g2 = origin.data[index + 1];
-            const b2 = origin.data[index + 2];
-            const a2 = origin.data[index + 3];
-
-            const equalOrigin = r1 === r2 && g1 === g2 && b1 === b2 && a1 === a2;
-            const equalFilling = r1 === fillData[0] && g1 === fillData[1] && b1 === fillData[2] && a1 === fillData[3];
-            if (!(equalOrigin || equalFilling)) {
-                data.data[index] = fillData[0];
-                data.data[index + 1] = fillData[1];
-                data.data[index + 2] = fillData[2];
-                data.data[index + 3] = fillData[3];
-            }
-        }
-    }
-
-    return data;
-}
-
 class Shape extends Tool {
     private type: ShapeToolType;
     private saveImageData?: ImageData;
@@ -194,10 +165,13 @@ class Shape extends Tool {
 
         let imageData = Tool.ctx.getImageData(0, 0, Tool.ctx.canvas.width, Tool.ctx.canvas.height);
 
-        const color = new Color(Tool.mainColor);
-        imageData = updateImageData(this.saveImageData!, imageData, [color.red(), color.green(), color.blue(), color.alpha()]);
+        const colorRgb = hexToRgb(Tool.mainColor);
+        if (colorRgb && this.saveImageData) {
+            imageData = updateImageData(this.saveImageData, imageData, [colorRgb.r, colorRgb.g, colorRgb.b, colorRgb.a]);
 
-        Tool.ctx.putImageData(imageData, 0, 0);
+            Tool.ctx.putImageData(imageData, 0, 0);
+        }
+        
         this.isMouseDown = false;
         this.saveImageData = undefined;
     }
