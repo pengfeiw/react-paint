@@ -1,5 +1,5 @@
 import {ShapeToolType} from "../toolType";
-import Tool, {Point, getMousePos, getTouchPos} from "./tool";
+import Tool, {Point, getMousePos, getTouchPos, hexToRgb, updateImageData} from "./tool";
 
 /**
  * 根据形状类型，获取要绘制的形状的顶点(圆形，返回圆心)
@@ -12,6 +12,7 @@ import Tool, {Point, getMousePos, getTouchPos} from "./tool";
 const getVertexs = (type: ShapeToolType, sx: number, sy: number, ex: number, ey: number): Point[] => {
     const points: Point[] = [];
     const mx = 0.5 * (sx + ex), my = 0.5 * (sy + ey);
+
     switch (type) {
         case ShapeToolType.LINE:
             points.push({x: sx, y: sy});
@@ -134,12 +135,6 @@ class Shape extends Tool {
         if (this.isDashed) {
             Tool.ctx.setLineDash(this.dashLineStyle);
         }
-        
-        // A line is always drawn on half of a pixel for even stroke widths.
-        // So translate 0.5 pixel
-        if (Tool.ctx.lineWidth % 2 !== 0) {
-            Tool.ctx.translate(0.5, 0.5);
-        }
     }
 
     private operateMove(pos: {x: number; y: number}) {
@@ -163,16 +158,20 @@ class Shape extends Tool {
                 ctx.closePath();
                 ctx.stroke();
             }
-
         }
     }
-
     private operateEnd() {
         Tool.ctx.setLineDash([]);
-        // reset translate
-        if (Tool.ctx.lineWidth % 2 !== 0) {
-            Tool.ctx.translate(-0.5, -0.5);
+
+        let imageData = Tool.ctx.getImageData(0, 0, Tool.ctx.canvas.width, Tool.ctx.canvas.height);
+
+        const colorRgb = hexToRgb(Tool.mainColor);
+        if (colorRgb && this.saveImageData) {
+            imageData = updateImageData(this.saveImageData, imageData, [colorRgb.r, colorRgb.g, colorRgb.b, colorRgb.a]);
+
+            Tool.ctx.putImageData(imageData, 0, 0);
         }
+        
         this.isMouseDown = false;
         this.saveImageData = undefined;
     }

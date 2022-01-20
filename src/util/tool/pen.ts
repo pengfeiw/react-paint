@@ -1,15 +1,18 @@
 import {ColorType} from "../toolType";
-import Tool, {Point, getMousePos, getTouchPos} from "./tool";
+import Tool, {Point, getMousePos, getTouchPos, hexToRgb, updateImageData} from "./tool";
 class Pen extends Tool {
     protected lineWidthBase = 1;
     protected drawColorType = ColorType.MAIN;
     private mouseDown = false;
+    private saveImageData?: ImageData;
     private previousPos: Point = {
         x: 0,
         y: 0
     };
     private operateStart(pos: Point) {
         if (!Tool.ctx) return;
+
+        this.saveImageData = Tool.ctx.getImageData(0, 0, Tool.ctx.canvas.width, Tool.ctx.canvas.height);
 
         this.mouseDown = true;
         Tool.ctx.lineWidth = Tool.lineWidthFactor * this.lineWidthBase;
@@ -33,6 +36,14 @@ class Pen extends Tool {
         if (this.mouseDown) {
             Tool.ctx.closePath();
             this.mouseDown = false;
+
+            let imageData = Tool.ctx.getImageData(0, 0, Tool.ctx.canvas.width, Tool.ctx.canvas.height);
+            const colorRgb = hexToRgb(this.drawColorType === ColorType.MAIN ? Tool.mainColor : Tool.subColor);
+            if (colorRgb && this.saveImageData) {
+                imageData = updateImageData(this.saveImageData, imageData, [colorRgb.r, colorRgb.g, colorRgb.b, colorRgb.a]);
+
+                Tool.ctx.putImageData(imageData, 0, 0);
+            }
         }
     }
     public onMouseDown(event: MouseEvent): void {
