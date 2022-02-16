@@ -1,5 +1,7 @@
 # React Paint
 
+**Microsoft Paint** written with [ReactJs](https://reactjs.org/).
+
 ![paint tool](https://cdn.jsdelivr.net/gh/pengfeiw/PengfeiBlog@1.0.0/image/69.png)
 
 ### demo
